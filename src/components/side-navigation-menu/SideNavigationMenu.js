@@ -16,7 +16,7 @@ export default function SideNavigationMenu() {
     // simulacija poziva metoda koja omogucava prikaz SearchPanel-a
     const timeout = setTimeout(() => {
       toggleColumnVisibility(4); 
-    }, 1000);
+    }, 300);
 
     return () => clearTimeout(timeout);
 /* eslint-disable-next-line react-hooks/exhaustive-deps */
