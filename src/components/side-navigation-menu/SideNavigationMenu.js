@@ -12,11 +12,18 @@ export default function SideNavigationMenu() {
       .then((data) => {
         setKoloneItems(data);
       });
-  }, []);
 
+    // simulacija poziva metoda koja omogucava prikaz SearchPanel-a
+    const timeout = setTimeout(() => {
+      toggleColumnVisibility(4); 
+    }, 1000);
 
+    return () => clearTimeout(timeout);
+/* eslint-disable-next-line react-hooks/exhaustive-deps */
+  }, []); 
+  
   return (
-    <div style={{height: '100vh', padding: '20px'}} className="side-navigation-menu">
+    <div style={{ height: '100vh', padding: '20px' }} className="side-navigation-menu">
       <div className="menu-container inactive-columns">
         {koloneItems.map((item, idx) => {
           if (!columnVisibility[item]) {
@@ -33,7 +40,7 @@ export default function SideNavigationMenu() {
           return null;
         })}
       </div>
-      <hr></hr>
+      <hr />
       <div className="menu-container active-columns">
         {koloneItems.map((item, idx) => {
           if (columnVisibility[item]) {
