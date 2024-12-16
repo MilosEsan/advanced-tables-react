@@ -15,7 +15,7 @@ export default function SideNavigationMenu() {
 
     // simulacija poziva metoda koja omogucava prikaz SearchPanel-a
     const timeout = setTimeout(() => {
-      toggleColumnVisibility(4); 
+      toggleColumnVisibility(5); 
     }, 300);
 
     return () => clearTimeout(timeout);

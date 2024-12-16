@@ -10,7 +10,7 @@ export const SharedContextProvider = ({ children }) => {
     naziv: true,
     karakteristikaA: true,
     karakteristikaB: true,
-    karakteristikaC: false,
+    karakteristikaC: true,
     karakteristikaD: false,
     karakteristikaE: false,
   });
