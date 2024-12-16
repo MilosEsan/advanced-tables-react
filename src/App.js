@@ -10,7 +10,6 @@ import LoadPanel from 'devextreme-react/load-panel';
 import { NavigationProvider } from './contexts/navigation';
 import { SharedContextProvider } from './contexts/sharedContext';
 import { AuthProvider, useAuth } from './contexts/auth';
-// import { useScreenSizeClass } from './utils/media-query';
 import Content from './Content';
 import UnauthenticatedContent from './UnauthenticatedContent';
 import { ThemeContext, useThemeContext} from "./theme";
@@ -30,7 +29,6 @@ function App() {
 }
 
 export default function Root() {
-  // const screenSizeClass = useScreenSizeClass();
   const themeContext = useThemeContext();
 
   return (

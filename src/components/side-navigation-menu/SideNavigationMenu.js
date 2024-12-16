@@ -6,7 +6,6 @@ export default function SideNavigationMenu() {
   const { columnVisibility, toggleColumnVisibility } = useContext(SharedContext);
   const [koloneItems, setKoloneItems] = useState([]);
 
-  // Fetch kolone sa servera
   useEffect(() => {
     fetch('http://77.78.198.63:252/kolone')
       .then((res) => res.json())
@@ -15,15 +14,16 @@ export default function SideNavigationMenu() {
       });
   }, []);
 
+
   return (
     <div style={{height: '100vh', padding: '20px'}} className="side-navigation-menu">
-      <div className="menu-container active-columns">
+      <div className="menu-container inactive-columns">
         {koloneItems.map((item, idx) => {
-          if (columnVisibility[item]) {
+          if (!columnVisibility[item]) {
             return (
               <div
                 key={idx}
-                className="column-item active"
+                className="column-item inactive"
                 onDoubleClick={() => toggleColumnVisibility(idx)}
               >
                 {item}
@@ -33,14 +33,14 @@ export default function SideNavigationMenu() {
           return null;
         })}
       </div>
-        <hr></hr>
-      <div className="menu-container inactive-columns">
+      <hr></hr>
+      <div className="menu-container active-columns">
         {koloneItems.map((item, idx) => {
-          if (!columnVisibility[item]) {
+          if (columnVisibility[item]) {
             return (
               <div
                 key={idx}
-                className="column-item inactive"
+                className="column-item active"
                 onDoubleClick={() => toggleColumnVisibility(idx)}
               >
                 {item}
